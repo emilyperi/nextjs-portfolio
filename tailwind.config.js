@@ -16,7 +16,23 @@ module.exports = {
             greymagenta: '#7F5F68',
             gold: '#EC9C2C',
             lightgreymagenta: '#e6dee0',
-	      }
+          },
+
+          fontFamily: {
+              sans: [
+                  'Segoe UI',
+                  'Frutiger',
+                  'Dejavu Sans',
+                  'Helvetica Neue',
+                  'Arial'
+              ],
+              starmoon: [
+                  'Starmoon',
+                  'cursive'
+              ]
+
+          }
+          
 	},
     
       },
