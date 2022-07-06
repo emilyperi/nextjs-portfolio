@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is a simple portfolio website created with a starter template from [Learn Next.js](https://nextjs.org/learn). I also used [TailWindCSS](https://tailwindcss.com/docs/installation)
