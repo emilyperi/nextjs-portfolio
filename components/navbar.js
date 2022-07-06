@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import NavLink from './navlink';
+
 export default function NavBar() {
+    const linkClass="bg-gradient-to-r from-tange hover:to-gold to-magenta rounded-lg w-10 h-10 p-1";
     return (
         <nav className="container mx-auto p-4 pt-8">
             <div className="flex space-x-6 justify-center">
-
-                <a href="#" className="bg-gradient-to-r from-tange hover:to-gold to-magenta rounded-lg w-10 h-10 p-1">
+                <NavLink href="https://github.com/emilyperi" className={linkClass}>
                     <Image
                         priority
                         src="/images/github.png"
@@ -13,8 +15,9 @@ export default function NavBar() {
                         objectFit="cover"
                         alt="github"
                     />
-                </a>
-                <a href="#" className="bg-gradient-to-r from-tange hover:to-gold to-magenta rounded-lg w-10 h-10 p-1">
+                </NavLink>
+
+                <NavLink href="https://www.linkedin.com/in/emily-peri-873210208" className={linkClass}>
                     <Image
                         priority
                         src="/images/linkedin.png"
@@ -23,7 +26,7 @@ export default function NavBar() {
                         objectFit="cover"
                         alt="linked in"
                     />
-                </a>
+                </NavLink>
 		     </div>
 		</nav>
 	);
