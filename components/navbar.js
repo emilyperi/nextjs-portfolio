@@ -8,7 +8,7 @@ export default function NavBar({children}) {
 
     return (
         <>
-        <div className="fixed bg-white w-full top-0 left-0 h-14">
+        <div className="fixed bg-xlightgreymagenta w-full top-0 left-0 h-14 drop-shadow">
         <div className={navOpen ? "lg:hidden flex flex-col absolute shadow-md top-0 right-0 rounded-md bg-white w-64 h-64 p-2" : "hidden"}>
             <div className="flex justify-end w-full h-10">
                 <button onClick={handleMenuClick}>
@@ -22,8 +22,8 @@ export default function NavBar({children}) {
             </svg>
             </button>
             </div>
-            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="#" className="my-auto w-full">Home</a></div>
-            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="#" className="my-auto w-full">Projects</a></div>
+            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="/" className="my-auto w-full">Home</a></div>
+            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="/projects" className="my-auto w-full">Projects</a></div>
         </div>
             <div className="container max-w-4xl mx-auto pr-6 pl-6 flex justify-end h-full space-x-6">
                 <button onClick={handleMenuClick} className="lg:hidden">
@@ -36,8 +36,8 @@ export default function NavBar({children}) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="#">Home</a></div>
-                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="#">Projects</a></div>
+                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="/">Home</a></div>
+                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="/projects">Projects</a></div>
             </div>
         </div>
         </>

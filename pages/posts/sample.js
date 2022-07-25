@@ -1,7 +1,7 @@
-import Layout from '../components/layout';
-import Paragraph from '../components/paragraph';
-import TextLink from '../components/textlink';
-import Project from "../components/project"
+import Layout from '../../components/layout';
+import Paragraph from '../../components/paragraph';
+import TextLink from '../../components/textlink';
+import Project from "../../components/project"
 
 const projectData = {
   title: "My Project",
@@ -9,13 +9,11 @@ const projectData = {
   href: "/posts/sample"
 }
 
-export default function Projects() {
+export default function Sample() {
   return (
     <Layout home={false}>
         <section>
-          <div className="flex flex-col items-center justify-center mx-auto max-w-prose lg:max-w-none mt-20">
-            <Project title={projectData.title} description={projectData.description} href={projectData.href}/>
-            <Project title={projectData.title} description={projectData.description} href={projectData.href}/>
+          <div className="flex flex-col items-center justify-center max-w-prose mx-auto mt-20">
             <Project title={projectData.title} description={projectData.description} href={projectData.href}/>
           </div>
         </section>    

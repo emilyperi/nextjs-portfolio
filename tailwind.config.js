@@ -16,6 +16,7 @@ module.exports = {
             greymagenta: '#7F5F68',
             gold: '#EC9C2C',
             lightgreymagenta: '#e6dee0',
+            xlightgreymagenta: '#f4f0f1',
             xlightgreybrown: '#DBD3CA'
           },
 

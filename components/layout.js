@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import Header from './header';
 import NavBar from './navbar';
 import Content from './content';
 import Social from './social';
+import SideBar from './sidebar';
 
 const name = 'Emily Peri';
 export const siteTitle = 'Personal Website';
@@ -16,16 +15,28 @@ export default function Layout({home,  children }) {
             <link rel="icon" href="favicon.ico" />
             <meta name="og:title" content={siteTitle} />
         </Head>
-        <div className="bg-lightgreymagenta">
-        <div className="container mx-auto">
-            <NavBar />
-            <Header name={name}></Header>
+        <div className="bg-lightgreymagenta min-h-screen">
+    
+            { home
+                ?   <>
+                        <NavBar />
+                        <div className="container mx-auto max-w-5xl">
+                            <Header name={name}></Header>
+                            <Content>{children}</Content>
+                            <div className='pt-10 pb-20'>
+                            <Social />
+                            </div>
+                        </div>
+                    </>
+                : <>
+                    <SideBar />
+                    <NavBar />
+                    <div className='container flex justify-center lg:justify-start mx-auto max-w-5xl lg:pl-64'>
+                        <Content>{children}</Content>
+                    </div>
+                </>
+            }   
         </div>
-            <div className="container mx-auto max-w-5xl min-h-screen">
-            <Content>{children}</Content>
-            <Social />
-        </div>
-        </div>
-       </>
+        </>
        );
 }

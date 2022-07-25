@@ -4,8 +4,8 @@ import NavLink from './navlink';
 export default function Social() {
     const linkClass="bg-gradient-to-r from-tange hover:to-gold to-magenta rounded-lg w-10 h-10 p-1";
     return (
-        <nav className="container mx-auto p-4 pt-8">
-            <div className="flex space-x-6 justify-center">
+        <nav className="w-40 mx-auto">
+            <div className="flex space-x-8 justify-center">
                 <NavLink href="https://github.com/emilyperi" className={linkClass}>
                     <Image
                         priority
