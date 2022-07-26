@@ -22,8 +22,8 @@ export default function NavBar({children}) {
             </svg>
             </button>
             </div>
-            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="/" className="my-auto w-full">Home</a></div>
-            <div className="flex justify-end w-full h-10 text-greymagenta hover:bg-lightgreymagenta text-left text-xl px-2 rounded-lg"><a href="/projects" className="my-auto w-full">Projects</a></div>
+            <div className="flex justify-end w-full h-10 text-greybrown hover:bg-lightgreymagenta text-wider text-left text-lg px-2 rounded-sm"><a href="/" className="my-auto w-full">HOME</a></div>
+            <div className="flex justify-end w-full h-10 text-greybrown hover:bg-lightgreymagenta text-wider text-left text-lg px-2 rounded-sm"><a href="/projects" className="my-auto w-full">PROJECTS</a></div>
         </div>
             <div className="container max-w-4xl mx-auto pr-6 pl-6 flex justify-end h-full space-x-6">
                 <button onClick={handleMenuClick} className="lg:hidden">
@@ -36,8 +36,8 @@ export default function NavBar({children}) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="/">Home</a></div>
-                <div className="hidden lg:block w-16 mt-auto mb-auto text-xl text-greybrown hover:text-lightgreybrown"><a href="/projects">Projects</a></div>
+                <div className="hidden lg:block w-16 mt-auto mb-auto text-wider text-greybrown hover:text-lightgreybrown"><a href="/">HOME</a></div>
+                <div className="hidden lg:block w-16 mt-auto mb-auto text-wider text-greybrown hover:text-lightgreybrown"><a href="/projects">PROJECTS</a></div>
             </div>
         </div>
         </>
