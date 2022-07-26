@@ -1,14 +1,14 @@
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import dynamic from 'next/dynamic';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atelierHeathDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const SyntaxHighlighter = dynamic(()=> {
-  return import("react-syntax-highlighter")}, {ssr: false})
-
-
-function CodeBlock(props) {
+export default function CodeBlock(props) {
+    atelierHeathDark.hljs.padding = "1em"
     return (
-        <SyntaxHighlighter language={props.language}>
+      <div className='w-full'>
+        <SyntaxHighlighter className="rounded-sm p-4" language={props.language} style={atelierHeathDark} wrapLongLines={true}>
           {props.codeString}
         </SyntaxHighlighter>
+      </div>
       )
+      
 }

@@ -17,7 +17,9 @@ module.exports = {
             gold: '#EC9C2C',
             lightgreymagenta: '#e6dee0',
             xlightgreymagenta: '#f4f0f1',
-            xlightgreybrown: '#DBD3CA'
+            xlightgreybrown: '#DBD3CA',
+            codeHighlight: '#D2CDD2',
+            codeBlock: '#1b181b'
           },
 
           fontFamily: {
