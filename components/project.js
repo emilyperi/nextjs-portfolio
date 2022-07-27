@@ -6,15 +6,9 @@ export default function Project(props) {
     const [showButton, setShowButon] = useState(true);
     const handleClick = () => setClamped(!clamped);
 
-    const children = props.children;
-    console.log(children);
-    children.forEach(child => {
-        console.log(child);
-    });
-
     return (
-        <div className="flex flex-col items-end justify-center mx-auto max-w-screen-md mt-20">
-        <h1 className='text-4xl text-greybrown mb-4'>{props.title}</h1>
+        <div className="flex flex-col items-end justify-center mx-auto max-w-screen-md mt-20 mb-10">
+        <h1 id={props.id} className='text-4xl text-greybrown mb-4'>{props.title}</h1>
             <div className={clamped ? "clamp" : "long-text"}>
                 {props.children}
             </div>
