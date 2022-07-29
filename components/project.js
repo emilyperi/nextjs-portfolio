@@ -7,14 +7,16 @@ export default function Project(props) {
     const handleClick = () => setClamped(!clamped);
 
     return (
-        <div className="flex flex-col items-end justify-center mx-auto max-w-screen-md mt-20 mb-10">
+        <div className="flex flex-col items-start mx-auto w-full mt-18 mb-10">
         <h1 id={props.id} className='text-4xl text-greybrown mb-4'>{props.title}</h1>
             <div className={clamped ? "clamp" : "long-text"}>
                 {props.children}
             </div>
+            <div className="flex w-full justify-end">
             {showButton && (
                 <button onClick={handleClick} className="bg-greymagenta p-2 text-xlightgreymagenta font-medium rounded-sm">Read {clamped ? "more" : "less"}</button>
             )}
+            </div>
         </div>
     );
 }

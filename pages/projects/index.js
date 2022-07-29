@@ -11,8 +11,8 @@ export default function Projects() {
   return (
     <Layout home={false}>
         <section>
-          <div className="flex flex-col justify-center items-center mx-auto max-w-prose lg:max-w-none mt-20">
-            <Project title="Making this Website with Next.js and Tailwind CSS">
+          <div className="flex flex-col items-center mx-auto max-w-prose lg:max-w-5xl lg:px-20 pt-32">
+            <Project title="Making this Website">
             <Paragraph>I often find when it comes to web development, its easier for me to learn how to use a tool (library, framework, etc.) than it is to understand what it actually is. For example, while I can say that Next.js is a framework similar to React's <span className='code-highlight bg-codeHighlight'>create-react-app</span>, I find it more meaningful to to talk about what I can do with it. Next.js compiles my JSX code into JavaScript. It imports the React.js library into my app. It routes my website to the pages I create, and renders them prior to serving them.</Paragraph>
             <h4 className='text-l font-medium text-codeBlock'>Creating An Image Component</h4>
             <Paragraph>Next.js has a lot of pre-built components. I originally used the <span className='code-highlight bg-codeHighlight'>Image</span> component, because its designed to optimize your images. However, I was running into problems with the CSS <span className='code-highlight bg-codeHighlight'>position</span> of the image wrapper.</Paragraph>
@@ -51,6 +51,8 @@ export default function Projects() {
             <Paragraph>This indicates that on default, the style is <span className='code-highlight bg-codeHighlight'>display:hidden</span>, but on large screens (1024 px) and above, it's set to <span className='code-highlight bg-codeHighlight'>block</span>. Its really useful for sizing content responsively as well.</Paragraph>
             <h4 className='text-l font-medium text-codeBlock'>Conclusion</h4>
             <Paragraph>Overall, I think these were the good tools to use for this project. There is a lot more functionality to Next.js than was needed to make this website, but I think it's cool that it is flexible enough for a simple use case like this one, as well as commercially. Thanks for stopping by!</Paragraph>
+            </Project>
+            <Project title="Simple HTTP Server">
             </Project>
           </div>
         </section>    
