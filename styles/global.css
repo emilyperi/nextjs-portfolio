@@ -30,7 +30,6 @@
 
     .clamp {
         overflow: hidden;
-        text-overflow: ellipsis;
         overflow-wrap: break-word;
         height: 8.125rem;
       }
