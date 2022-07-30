@@ -30,10 +30,10 @@ export default function Layout({home,  children }) {
                     </>
                 : <>
                     <SideBar />
+                    <NavBar />
                     <div className='flex mx-auto justify-center lg:pl-64'>
                         <Content>{children}</Content>
                     </div>
-                    <NavBar />
                 </>
             }   
         </div>

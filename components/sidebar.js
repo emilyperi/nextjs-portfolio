@@ -9,8 +9,8 @@ export default function SideBar(props) {
             </div>
 
             <div className="w-3/4 mx-auto mt-8">
-                <ul className="list-none text-greymagenta text-large underline sfont-light leading-relaxed">
-                    <li><a href="#nextjs-webiste">NextJS Website</a></li>
+                <ul className="list-none text-greymagenta text-large underline leading-relaxed">
+                    <li><a href="#nextjs-website">NextJS Website</a></li>
                     <li><a href="#http-sever">Simple HTTP Server</a></li>
                 </ul>
             </div>

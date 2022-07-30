@@ -1,14 +1,12 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atelierHeathDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-export default function CodeBlock(props) {
-    atelierHeathDark.hljs.padding = "1em"
+const CodeBlock = (props) => { 
     return (
-      <div className='w-full'>
-        <SyntaxHighlighter className="rounded-sm p-4" language={props.language} style={atelierHeathDark} wrapLongLines={true}>
+        <SyntaxHighlighter language={props.language} style={dracula} wrapLongLines={true}>
           {props.codeString}
         </SyntaxHighlighter>
-      </div>
-      )
+      );
       
-}
+};
+export default CodeBlock;
