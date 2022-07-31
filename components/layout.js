@@ -31,7 +31,7 @@ export default function Layout({home,  children }) {
                 : <>
                     <SideBar />
                     <NavBar />
-                    <div className='flex mx-auto justify-center lg:pl-64'>
+                    <div className='flex mx-auto justify-center lg:pl-64 2xl:pl-48'>
                         <Content>{children}</Content>
                     </div>
                 </>
