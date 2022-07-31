@@ -5,7 +5,6 @@ export default function NavBar({children}) {
     const handleMenuClick = () => {
         setNavOpen(!navOpen)
     }
-    console.log("navOpen is ", navOpen)
 
     return (
         <>
