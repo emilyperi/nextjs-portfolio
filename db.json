@@ -1,0 +1,66 @@
+{
+    "nextjsWebsite" : {
+        "title" : "Making this Website with Next.js and Tailwind",
+        "codeBlocks": [
+            {
+                "language": "html",
+                "code": "<img src='/myimage-sm.jpg' srcset='/myimage-sm.jpg 1x, /myimage-md.jpg 2x, /myimage-lg.jpg 3x'>"
+            },
+            {
+                "language": "javascript",
+                "code": "const [navOpen, setNavOpen] = useState(false);\nconst handleMenuClick = () => {\n    setNavOpen(!navOpen);\n}"
+            },
+            {
+                "language": "jsx",
+                "code": "<div className={navOpen ? 'flex flex-col...' : 'hidden'}>" 
+            },
+
+            {
+                "language": "html",
+                "code": "<div className='hidden lg:block ...'>\n    <a href='/'>Home</a>\n</div>"   
+            }
+        
+        ]
+    },
+    "httpServer" :{
+        "title": "Simple HTTP Server in C",
+        "codeBlocks": [
+            {
+                "language": "c",
+                "code": "/* Parses the arguments from the command line, determines which type of request_handler to use, and calls serve_forever */\nint main(int argc, char** argv) {...}\n\n/* Opens a TCP socket with the designated port number, runs a continous loop listening for new client connections. Once a client connection is made, it handles its request using the request_handler that is passed in as an argument */\nvoid serve_forever(int* socket_number, ...) {...}\n\n/* Handles the proxy requests by opening a connection the target hostname and port, which are passed in to the main function as arguments. Once the connection is made, it relays all client requests the target, and all target responses to the client. */\nvoid handle_proxy_request(int fd) {...}\n\n/* Handles client's 'GET' requests for files (within the server_files_directory) and calls helper functions to depending on if the requested resource is a directory or file. Handles the case in which the resource does not exist. */\nvoid handle_files_request(int fd) {...}\n\n/* For the pool server part */\n/* Initializes in the worker queue struct using the worker queue library. Creates the number of threads designated by the passed in paramter, and sets them up with the function hand_clients. */\nvoid init_thread_pool(int num_threads, ...) {...}\n\n/* Uses the built-in, blocking functions from the worker queue library to remove items from the queue, and apply the request_handler to the item (a client socket descriptor) */\nvoid* handle_clients(void* void_request_handler) {...}"
+            },
+            {
+                "language": "c",
+                "code": "...\nstruct stat sb;\nif (stat(path, & sb) == -1) {\n    // error, could be doesn't exist\n} else if(S_ISREG(sb.st_mode)) {\n    // path is a regulary file\n} else if (S_ISDIR(sb.st_mode)) {\n,    // path is a directory\n}"
+            },
+            {
+             "language":"c",
+             "code": "int pathfd = open(path, O_RDONLY);\nif (pathfd == -1) {\n    perrror(\"Failed to open file\");\n    return;\n}"
+            },
+            {
+                "language":"c",
+                "code": "int size = 1024;\nchar* buff = (char *) calloc(size, sizeof(char));\nwhile ((nread = read(pathfd, (void *) buff, size)) > 0) {\n    if ((nwrite = write(client_fd, buff, nread)) != nread) {\n        // Handle this scenario\n    }\n}\nif (nread < 0) {\n    // There was an error reading, needs to be handled\n}"
+            },
+            {
+                "language": "c",
+                "code": "void init_thread_pool(...) {\nwq_init(&work_queue);\nfor (int i=0; i < num_threads; i++) {\n    pthread_t tid;\n    int error = pthread_create(&tid, NULL, &handle_clients, request_handler);\n    if (error) { /* Handle error */ }\n}\n}"
+            },
+            {
+                "language": "c",
+                "code": "void* handle_clients(void* request_handler) {\n...\nwhile(1) {\n    int fd = wq.pop(&work_queue);\n    request_handler(fd);\n}\n...\n}"
+            },
+            {
+                "language": "c",
+                "code": "if (wq.size > 0) {\n    int fd = wq.pop(&work_queue);\n}"
+            },
+            {
+                "language": "c",
+                "code": "int wq_pop(wq_t* wq) {\n    pthread_mutex_lock(&wq->mutex);\n    while (wq->size == 0) {\n        pthread_cond_wait(&wq->condvar, &wq->mutex);\n   }\n   ...\n}"
+            },
+            {
+                "language": "c",
+                "code": "pthread_cond_broadcast(wq->condvar);"
+            }
+        ]
+    }
+}
