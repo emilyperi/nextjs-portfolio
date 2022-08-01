@@ -22,8 +22,8 @@ export default function NavBar({children}) {
             </svg>
             </button>
             </div>
-            <div className="w-full h-10 text-greybrown hover:bg-lightgreymagenta text-wider text-lg px-2 rounded-sm"><Link href="/" className="my-auto w-full">HOME</Link></div>
-            <div className="w-full h-10 text-greybrown hover:bg-lightgreymagenta text-wider text-lg px-2 rounded-sm"><Link href="/projects" className="my-auto w-full">PROJECTS</Link></div>
+            <div className="w-full h-10 pt-1.5 text-greybrown hover:bg-lightgreymagenta text-wider text-lg px-2 rounded-sm"><Link href="/" >HOME</Link></div>
+            <div className="w-full h-10 pt-1.5 text-greybrown hover:bg-lightgreymagenta text-wider text-lg px-2 rounded-sm"><Link href="/projects">PROJECTS</Link></div>
         </div>
             <div className="container max-w-4xl mx-auto pr-6 pl-6 flex justify-end h-full space-x-6">
                 <button onClick={handleMenuClick} className="lg:hidden">
