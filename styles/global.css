@@ -6,3 +6,36 @@
     font-family: "Starmoon";
     src: url("../public/fonts/Starmoon-lg5v5.otf");
 }
+
+@layer utilities {
+    .code-highlight {
+        border-radius: .25rem;
+        padding: .125rem .1875rem;
+        margin: 0 -.1875rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    code {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .border-image {
+        border-color: #1b181b;
+        /*border-color: #f4f0f1; */
+        border-width: 4px;
+        border-radius: 0.125rem;
+
+    }
+
+    .clamp {
+        overflow: hidden;
+        overflow-wrap: break-word;
+        height: 8.125rem;
+      }
+
+
+      .long-text {
+        height: min-content;
+      }
+}
