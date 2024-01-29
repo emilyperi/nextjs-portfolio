@@ -2,7 +2,6 @@ import path from 'path';
 import fsPromises from 'fs/promises';
 import Layout from '../../components/layout';
 import Paragraph from '../../components/paragraph';
-import TextLink from '../../components/textlink';
 import Project from "../../components/project";
 import Image from '../../components/image';
 import CodeBlock from '../../components/codeblock';
@@ -32,7 +31,7 @@ export default function Projects({allProjects}) {
             <Paragraph>What do I mean by optimization? In this case, I'm talking about the trade-off between the quality of an image and the time it takes to load. The devices people use to visit a webpage vary in screen size, screen resolution, and the amount of bandwidth at their disposal. The <span className='code-highlight bg-codeHighlight'>srcset</span> attribute allows you to serve different sizes of the same image depending whats best for the viewer. For example,</Paragraph>
             <CodeBlock
               language={codeBlocksWeb[0].language}
-              codeString={codeBlocksWeb[0].code}
+              value={codeBlocksWeb[0].code}
             />
             
           <Paragraph>Instead of <span className='code-highlight bg-codeHighlight'>1x</span>, <span className='code-highlight bg-codeHighlight'>2x</span>, <span className='code-highlight bg-codeHighlight'>3x</span>, <span className='code-highlight bg-codeHighlight'>4x</span>, you can also use specific sizes such as <span className='code-highlight bg-codeHighlight'>240w</span>, <span className='code-highlight bg-codeHighlight'>300w</span>, <span className='code-highlight bg-codeHighlight'>720w</span>, <span className='code-highlight bg-codeHighlight'>960w</span> or whatever it is that you want to use. While I used srcset to when defining my `Image` component, I didn't end up making different sized versions of my profile photo, because it didn't seem worth it since the image will be small and more or less the same size on every screen. </Paragraph>
@@ -40,20 +39,20 @@ export default function Projects({allProjects}) {
           <Paragraph>One of the more interesting parts of development was using React's `useState` to create a drop-down menu for mobile devices. </Paragraph>
           <CodeBlock
             language={codeBlocksWeb[1].language}
-            codeString={codeBlocksWeb[1].code}
+            value={codeBlocksWeb[1].code}
           />
             <Paragraph>By default, <span className='code-highlight bg-codeHighlight'>navOpen</span> is set to <span className='code-highlight bg-codeHighlight'>false</span>, and when the hamburger menu button is clicked, the event handler toggles the value of <span className='code-highlight bg-codeHighlight'>navOpen</span>. </Paragraph>
             <Paragraph>This means that I could change the CSS of the drop-down html element depending on value of <span className='code-highlight bg-codeHighlight'>navOpen</span></Paragraph>
             <CodeBlock
               language={codeBlocksWeb[2].language}
-              codeString={codeBlocksWeb[2].code}
+              value={codeBlocksWeb[2].code}
               />
             <Paragraph>Cool!</Paragraph>
             <h4 className='text-l font-medium text-codeBlock'>Tailwind CSS Responsive Navigation Bar</h4>
             <Paragraph>One cool thing about Tailwind CSS is that it makes it easy to change the CSS at each screen breakpoints using class prefixes. For example, I wanted to have a "hamburger" menu for small to medium screens, and a text menu for large screens, I can use the prefix <span className='code-highlight bg-codeHighlight'>lg</span>.</Paragraph>
             <CodeBlock
               language={codeBlocksWeb[3].language}
-              codeString={codeBlocksWeb[3].code}
+              value={codeBlocksWeb[3].code}
             />
             <Paragraph>This indicates that on default, the style is <span className='code-highlight bg-codeHighlight'>display:hidden</span>, but on large screens (1024 px) and above, it's set to <span className='code-highlight bg-codeHighlight'>block</span>. Its really useful for sizing content responsively as well.</Paragraph>
             <h4 className='text-l font-medium text-codeBlock'>Conclusion</h4>
@@ -110,7 +109,7 @@ export default function Projects({allProjects}) {
             {/*Code Block 0 */}
             <CodeBlock 
               language={codeBlocksServ[0].language}
-              codeString={codeBlocksServ[0].code}
+              value={codeBlocksServ[0].code}
             />
             <Paragraph>The first part of the assignment really just involved understanding what a socket is, and how to use the relevant C header files.</Paragraph>
             <Paragraph>So, what exactly is a socket? As an analogy, suppose you and your friend write letters back and forth and send them through the postal service. You can think of your mailbox as a socket, i.e. the endpoint you check with some regularity to see if a letter has arrived. Once you receive a letter, you read it and write a response, and (in rural places) leave it it in the mailbox for the postal worker to take with them. This way, the mailbox serves as endpoint for outgoing and incoming messages.</Paragraph>
@@ -123,21 +122,21 @@ export default function Projects({allProjects}) {
             {/*Code Block 1 */}
             <CodeBlock 
               language={codeBlocksServ[1].language}
-              codeString={codeBlocksServ[1].code}
+              value={codeBlocksServ[1].code}
             />
             <Paragraph>Once we get enough information about the path, we can call the appropriate helper function, either <CodeSpan>serve_file</CodeSpan> or <CodeSpan>serve_directory</CodeSpan>. </Paragraph>
             <Paragraph>In <CodeSpan>serve_file</CodeSpan>, we start to deal with two file descriptors-- one for the client, and another for the file requested.</Paragraph>
               {/*Code Block 2 */}
               <CodeBlock 
                 language={codeBlocksServ[2].language}
-                codeString={codeBlocksServ[2].code}
+                value={codeBlocksServ[2].code}
               />
               <Paragraph>In order to <CodeSpan>read</CodeSpan> from the path file descriptor and <CodeSpan>write</CodeSpan> to the client file descriptor, you have to use a "buffer" array, that is some place to temporarily store the data in memory. When you call <CodeSpan>read(int fd, const void *buf, size_t count)</CodeSpan>, the data goes from the resource file descriptor to the buffer. When you call <CodeSpan>write(int fd, const void *buf, size_t count)</CodeSpan>, the data goes from buffer to the client file descriptor.</Paragraph>
               <Paragraph>The tricky is part is, how big do we make the buffer? We could get the file-size from the <CodeSpan>stat()</CodeSpan> function, and allocate enough space to fit the entire file. But, is that a good use of heap memory? What if we had 20 threads running concurrently, each asking for 300,000 bytes from the heap? Well, maybe that still isn't a big deal, and to be honest I'm not entirely sure what it is a typical scenario for an actual HTTP server. But it seems to me, that we are better off creating a smaller, fixed sized buffer and doing repeated reads and writes until completion.</Paragraph>
               {/*Code Block 3 */}
               <CodeBlock 
                 language={codeBlocksServ[3].language}
-                codeString={codeBlocksServ[3].code}
+                value={codeBlocksServ[3].code}
               />
               <Paragraph> The other tricky part, is that <CodeSpan>read</CodeSpan> and <CodeSpan>write</CodeSpan>are not guaranteed to actually read and write the number of bytes passed in as the size paramter. They may also return -1 if there is an error. I didn't know for sure what was the best thing to do in these scenarios. Should the program keep writing (in a loop) to the client fd until the number of bytes written equaled those read? Would that loop be guaranteed to end? If there is an error, how should the program respond to the client? These are definetly questions that I would like to explore!</Paragraph>
               <h4 className='text-l font-medium text-codeBlock'>Part 3 worker thread pool</h4>
@@ -147,20 +146,20 @@ export default function Projects({allProjects}) {
               {/*Code Block 4 */}
               <CodeBlock 
                 language={codeBlocksServ[4].language}
-                codeString={codeBlocksServ[4].code}
+                value={codeBlocksServ[4].code}
               />
               <Paragraph>Then, <CodeSpan>handle_clients</CodeSpan> looks something like this</Paragraph>
               
               {/*Code Block 5 */}
               <CodeBlock 
                 language={codeBlocksServ[5].language}
-                codeString={codeBlocksServ[5].code}
+                value={codeBlocksServ[5].code}
               />
               <Paragraph>There is one big problem to all of this. What happens when a thread calls <CodeSpan>wq.pop</CodeSpan> and its empty? In a non-multithreaded scenario, this would be simple-- just check.</Paragraph>
               {/*Code Block 6 */}
               <CodeBlock 
                 language={codeBlocksServ[6].language}
-                codeString={codeBlocksServ[6].code}
+                value={codeBlocksServ[6].code}
               />
               <Paragraph>But with multithreading, we don't know at what point the cpu will stop and switch out a thread during its execution. Thread A might check the size, find that its 1, proceed into the body of the <CodeSpan>if</CodeSpan> statement. Then, before it gets a chance to remove an item from the queue, the cpu suspends it and begins to run thread B. Thread B, also checks the size, finds that its 1, and successfully calls <CodeSpan>wq.pop()</CodeSpan>. When thread A resumes, it immedietly call <CodeSpan>wq.pop</CodeSpan>, but the queue is now empty and the program errors!</Paragraph>
               <Paragraph>The solution is to force the program to follow synchronization rules. If there is any sort of shared resource, then only one thread gets to access it at the same time. A "blocking" section of the program prevents more than one thread running until its complete. </Paragraph>
@@ -168,7 +167,7 @@ export default function Projects({allProjects}) {
               {/*Code Block 7 */}
               <CodeBlock 
                 language={codeBlocksServ[7].language}
-                codeString={codeBlocksServ[7].code}
+                value={codeBlocksServ[7].code}
               />
               <Paragraph><CodeSpan>mutex</CodeSpan> stands for mutual exclusion, and is a special kind of object. You can kind of think of it like the "magic talking stick" (or ball , etc.) in an elementary school classroom-- the teacher hands it one at a time to each student who wants a turn to speak Similarly, the function <CodeSpan>pthread_mutex_lock()</CodeSpan> successfully acquires the mutual exclusion lock if its available, and if not, the current thread is suspended. When the thread manages to get the lock, it's guaranteed that no other thread can run the next line of code, so the current thread can safely read the queue size.</Paragraph>
               <Paragraph>But what if the queue is empty, that its, <CodeSpan>wq-{'>'}size == 0</CodeSpan> is true? When there is no work for the thread to do, it can simply wait and relinquish the cpu. However, it also needs to give up the lock, because its used different parts of the program, such as adding items to the queue. The function <CodeSpan>pthread_cond-wait()</CodeSpan> takes in a conditional variable, another synchronization object, as well as the lock, and causes the thread to release the lock and essentially, take a nap. </Paragraph>
@@ -176,7 +175,7 @@ export default function Projects({allProjects}) {
               {/*Code Block 8 */}
               <CodeBlock 
                 language={codeBlocksServ[8].language}
-                codeString={codeBlocksServ[8].code}
+                value={codeBlocksServ[8].code}
               />
               <Paragraph>Any of the threads that had previously called <CodeSpan>pthread_cond_wait</CodeSpan> with the conditional variable <CodeSpan>wq-{'>'}condvar</CodeSpan> are awoken from their naps, and the first one in line will take back the lock and continue on where they left off. </Paragraph>
               <h4 className='text-l font-medium text-codeBlock'>Part 4 proxy server</h4>

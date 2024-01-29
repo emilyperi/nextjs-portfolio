@@ -12,6 +12,7 @@
         border-radius: .25rem;
         padding: .125rem .1875rem;
         margin: 0 -.1875rem;
+        white-space: nowrap;
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
@@ -19,6 +20,29 @@
         font-size: 0.875rem;
         line-height: 1.5rem;
     }
+
+    .code-block-container {
+        background-color: rgb(49, 49, 56);
+        border-radius: 4px; /* Optional: for rounded corners */
+        width: 100%;
+        overflow: hidden; /* Ensures the border-radius clips the content */
+    }
+
+    .code-header {
+        background-color: rgb(59, 59, 75); /* Lighter shade than the code block */
+        color: white; /* Text color */
+        padding: 4px 8px; /* Adjust as needed */
+        font-size: 0.85rem; /* Adjust as needed */
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /*!* Assuming .code-block is the class applied in your SyntaxHighlighter *!*/
+    /*.code-block {*/
+    /*    margin: 0; !* Removes default margin *!*/
+    /*    overflow: auto;*/
+    /*    width: 100%;*/
+    /*    !* Other styles... *!*/
+    /*}*/
 
     .border-image {
         border-color: #1b181b;
