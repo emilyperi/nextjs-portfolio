@@ -7,6 +7,54 @@
     src: url("../public/fonts/Starmoon-lg5v5.otf");
 }
 
+
+/* Define base styles for HTML elements */
+body {
+    @apply bg-gray-50 text-gray-800;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+    @apply font-sans text-greybrown;
+}
+
+h1 {
+    @apply text-4xl font-bold mb-4;
+}
+
+h2 {
+    @apply text-3xl font-semibold;
+}
+
+h3 {
+    @apply text-2xl
+}
+
+h4 {
+    @apply text-xl font-medium
+}
+
+p {
+    @apply text-base leading-relaxed font-light mt-0 mb-4;
+}
+
+a {
+    @apply underline hover:text-lightgreybrown;
+}
+
+ul {
+    @apply list-inside list-disc;
+}
+
+ol {
+    @apply list-inside list-decimal;
+}
+
+li {
+    @apply mb-2 font-light;
+}
+
+
+
 @layer utilities {
     .code-highlight {
         border-radius: .25rem;
@@ -49,15 +97,16 @@
         /*border-color: #f4f0f1; */
         border-width: 4px;
         border-radius: 0.125rem;
-
     }
 
-    .clamp {
+    .markdown-container.clamped {
         overflow: hidden;
         overflow-wrap: break-word;
-        height: 8.125rem;
+        max-height: 12rem;
       }
 
+    .markdown-container {
+    }
 
       .long-text {
         height: min-content;

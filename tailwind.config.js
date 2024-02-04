@@ -36,8 +36,24 @@ module.exports = {
                     'cursive'
                 ]
 
+            },
+
+            keyframes: {
+                fillCircle: {
+                    '0%': { 'border-color': 'transparent', 'background-color': 'transparent' },
+                    '50%': { 'border-color': '#94268B', 'background-color': 'transparent' },
+                    '100%': { 'border-color': '#94268B', 'background-color': '#94268B' },
+                },
+            },
+            animation: {
+                fillCircle: 'fillCircle 4s forwards',
             }
 
+        }
+    },
+    variants: {
+        extend: {
+            animation: ['hover', 'focus'],
         }
     }
 }
